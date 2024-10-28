@@ -1,0 +1,664 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Animations */
+
+@keyframes opacity-movement {
+  from {
+    transform: translateY(-200px);
+    opacity: 0%;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+
+@keyframes right-movement {
+  from {
+    transform: translateX(200px);
+    opacity: 0%;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 100%;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/* Hero and Nav */
+
+.containerHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../assets/img/Rectangle\ 1\(2\).png");
+  background-size: cover;
+  background-position: center center;
+  height: 91svh;
+  box-shadow: 0 4px 8px 0 rgba(84, 85, 88, 0.2),
+    0 6px 20px 0 rgba(98, 99, 105, 0.19);
+  animation: opacity 2s ease-in-out;
+}
+
+header {
+  margin-top: 7svh;
+}
+
+header img {
+  width: 30svh;
+  animation: opacity-movement 1.5s ease-in-out;
+  /* width: 212px;
+  height: 26px; */
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: opacity-movement 1.5s ease-in-out;
+}
+
+nav a {
+  position: relative;
+  /* per mettere la linea sotto */
+  padding: 1vh;
+  text-decoration: none;
+  color: #ffd9ce;
+}
+
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  /* figlio del padre relative */
+  background: #ffe1d8;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+nav a:hover {
+  color: #ffe1d8;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+nav li {
+  margin-top: 6svh;
+  list-style: none;
+  display: inline-block;
+}
+
+nav hr {
+  border: 1px solid #ffd9ce;
+  width: 74%;
+  margin-top: 6svh;
+}
+
+.heroText {
+  margin-top: 8svh;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  animation: right-movement 1.5s ease-in-out;
+}
+
+.heroText h1,
+.heroText h6 {
+  font-family: "Cormorant Garamond", serif;
+  color: white;
+  font-weight: 300;
+}
+
+.heroText h1 {
+  font-size: 11svh;
+  text-align: right;
+}
+
+.heroText h1 strong {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #f8a697;
+}
+
+.heroText h6 {
+  font-size: 4.3svh;
+}
+
+.heroText h6 strong {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  color: #f8a697;
+}
+
+.heroText h6 span {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+}
+
+/* Main section */
+
+/* About */
+
+.container-about {
+  margin-top: 24svh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.col-img {
+  position: relative;
+  width: 55svh;
+  height: 65svh;
+  z-index: 1;
+  background-image: url("../assets/img/Rectangle\ 2\(1\).png");
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 4px 8px 0 rgba(84, 85, 88, 0.2),
+    0 6px 20px 0 rgba(98, 99, 105, 0.19);
+}
+
+.col-img:hover {
+  filter: contrast(1.3);
+  transition: 0.5s;
+}
+
+.col-imgBorder {
+  position: absolute;
+  z-index: 0;
+  width: 55svh;
+  height: 65svh;
+  border: 4px solid #f8a697;
+  margin-top: 10%;
+  margin-left: -30%;
+}
+
+.col-about {
+  width: 50svh;
+  font-size: calc(0.16svh + 0.8em);
+  color: #6b717e;
+}
+
+.col-about h6 {
+  font-family: "Open sans", sans-serif;
+  text-transform: uppercase;
+  font-size: calc(0.16svh + 0.8em);
+}
+
+.col-about h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  color: #d0604c;
+  font-size: calc(0.48svh + 2.4em);
+}
+
+.col-about h4 {
+  margin-top: 2svh;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: calc(0.24svh + 1.2em);
+  color: #262b36;
+}
+
+.col-about p {
+  margin-top: 2svh;
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.16svh + 0.8em);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Service */
+
+.container-service {
+  margin-top: 24svh;
+  display: flex;
+  justify-content: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 4px 8px 0 rgba(195, 195, 196, 0.2),
+    0 6px 20px 0 rgba(231, 232, 236, 0.19);
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #eaedf1;
+  padding: 7svh;
+  width: 60svh;
+  height: 400px;
+  box-sizing: border-box; /* include il padding nelle dimensioni complessive della card */
+  overflow: hidden; /* evita che il contenuto fuoriesca dalla card */
+}
+
+.card:hover {
+  transition: 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(195, 195, 196, 0.2),
+    0 6px 20px 0 rgba(231, 232, 236, 0.19);
+}
+
+.card img {
+  width: 10svh;
+}
+
+.card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  margin-top: 2svh;
+  font-size: calc(0.24svh + 1.5em);
+  color: #d0604c;
+}
+
+.card h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  color: #6b717e;
+}
+
+.card p {
+  margin-top: 1svh;
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.12svh + 0.75em);
+  text-align: justify;
+  text-justify: inter-word;
+  color: #6b717e;
+}
+
+.card button {
+  width: 102px;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-top: 4svh;
+  margin-left: 31svh;
+  padding: 0;
+  /* Alcuni browser potrebbero avere un padding di default sui bottoni, quindi resettarlo */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Reset di altri stili possibili come il background */
+  border-radius: 8px;
+  background-color: #f8a697;
+}
+
+.card button:hover {
+  background-color: #3be2ff;
+  transition: 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(238, 239, 241, 0.2),
+    0 6px 20px 0 rgba(167, 168, 175, 0.19);
+}
+
+.card button img {
+  margin-left: 50px;
+  margin-top: 3px;
+  width: 24px;
+}
+
+.card button:hover img {
+  transition: 0.5s;
+  transform: rotate(90deg);
+  margin-left: 0;
+}
+
+/* Gallery */
+
+.container-gallery {
+  margin-top: 24svh;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 4px 8px 0 rgba(84, 85, 88, 0.2),
+    0 6px 20px 0 rgba(98, 99, 105, 0.19);
+}
+
+.gallery-card {
+  background-color: #ffffff;
+  width: 60svh;
+  height: 79svh;
+  border: 1px solid #eaedf1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-card img {
+  width: 60svh;
+  height: 79svh;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.gallery-card img:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.gallery-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(60, 61, 63, 0.2),
+    0 6px 20px 0 rgba(76, 77, 82, 0.19);
+  transition: 0.5s;
+}
+
+.gallery-content {
+  padding: 8svh;
+}
+
+.gallery-content h4 {
+  font-family: "Open sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: calc(0.16svh + 0.8em);
+}
+
+.gallery-content h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  margin-top: 2svh;
+  font-size: calc(0.24svh + 1.5em);
+  color: #d0604c;
+}
+
+.gallery-content p {
+  margin-top: 1svh;
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.16svh + 0.8em);
+  text-align: justify;
+  text-justify: inter-word;
+  color: #6b717e;
+}
+
+/* Booking */
+
+.booking {
+  margin-top: 24svh;
+  background-color: #252c3c;
+  background-size: cover;
+  padding-bottom: 16svh;
+}
+
+.booking-content {
+  padding-top: 24svh;
+  display: flex;
+  justify-content: center;
+  /* justify-content: space-between; */
+  gap: 20svh;
+  flex-direction: row;
+  padding-left: 20svh;
+  padding-right: 20svh;
+  flex-wrap: wrap;
+}
+
+.info-and-contacts {
+  width: 60svh;
+}
+
+.info-and-contacts h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: calc(0.56svh + 3.5em);
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+}
+
+.info-and-contacts h4 {
+  margin-top: 2svh;
+  margin-bottom: 2svh;
+  font-family: "Open sans", sans-serif;
+  font-weight: 300;
+  color: #f8a697;
+}
+
+.info-and-contacts p {
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.16svh + 0.8em);
+  font-weight: 300;
+  color: white;
+}
+
+/* form */
+
+.booking-appointment label {
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.16svh + 0.8em);
+  font-weight: 300;
+  color: #ffd9ce;
+}
+
+.email-field {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10svh;
+}
+
+/* Rimuovi bordi e sfondo predefiniti dell'input */
+input[type="text"],
+input[type="email"] {
+  margin-bottom: 2svh;
+  border: none;
+  border-bottom: 2px solid white; /* Linea bianca sotto l'input */
+  background-color: transparent;
+  color: white; /* Colore del testo */
+  padding: 5px 0; /* Spazio sopra e sotto il testo */
+  outline: none; /* Rimuove il contorno quando l'input è focalizzato */
+  font-size: 16px; /* Dimensione del testo */
+}
+
+/* Cambia colore della linea quando l'input è focalizzato */
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-bottom-color: #d0604c;
+  transition: 0.5s;
+}
+
+textarea {
+  border: none;
+  border-bottom: 2px solid white; /* Linea bianca sotto la textarea */
+  background-color: transparent;
+  color: white; /* Colore del testo */
+  padding: 5px 0; /* Spazio sopra e sotto il testo */
+  outline: none; /* Rimuove il contorno quando la textarea è focalizzata */
+  font-size: 16px; /* Dimensione del testo */
+  resize: none; /* Rimuove la possibilità di ridimensionare la textarea */
+  width: 100%; /* Larghezza completa del contenitore */
+  box-sizing: border-box; /* Include il padding e il bordo nella larghezza totale */
+  height: 160px; /* Altezza iniziale della textarea */
+}
+
+/* Cambia colore della linea quando la textarea è focalizzata */
+textarea:focus {
+  border-bottom-color: #f8a697;
+}
+
+input[type="submit"] {
+  margin-top: 4svh;
+  padding: 1.5svh;
+  border-radius: 6px;
+  background-color: white;
+  color: #d0604c;
+  font-family: "Open sans", sans-serif;
+  font-weight: 700;
+  border: none;
+  -webkit-appearance: none; /* Rimuove l'aspetto predefinito nei browser WebKit */
+  -moz-appearance: none; /* Rimuove l'aspetto predefinito nei browser Firefox */
+  appearance: none; /* Rimuove l'aspetto predefinito nei browser che supportano la proprietà */
+}
+
+input[type="submit"]:hover {
+  color: white;
+  background-color: #3be2ff;
+  transition: 0.5s;
+}
+
+.align-right {
+  float: right;
+}
+
+footer {
+  background-color: #11191f;
+  height: 16svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h6 {
+  color: white;
+  font-family: "Open sans", sans-serif;
+  font-size: calc(0.12svh + 0.75em);
+  font-weight: 200;
+}
+
+/* Media Queries */
+
+@media (min-width: 320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .col-imgBorder {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .col-about h6 {
+    margin-top: 6svh;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card button {
+    margin-left: auto;
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .email-field {
+    gap: 2svh;
+  }
+  .align-right {
+    float: right;
+    margin-right: 20%;
+  }
+}
+@media (min-width: 480px) {
+  /* smartphones, Android phones, landscape iPhone */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card button {
+    margin-left: auto;
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .align-right {
+    float: right;
+    margin-right: 0%;
+  }
+}
+@media (min-width: 600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .align-right {
+    float: right;
+  }
+}
+
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .col-imgBorder {
+    opacity: 1;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .email-field {
+    gap: 10svh;
+  }
+  .align-right {
+    float: right;
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .col-imgBorder {
+    opacity: 1;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card button {
+    margin-left: auto;
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .align-right {
+    float: right;
+  }
+}
+@media (min-width: 1500px) {
+  .card button {
+    margin-left: auto;
+  }
+  .align-right {
+    float: right;
+  }
+}
