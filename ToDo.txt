@@ -1,3 +1,4 @@
 Todo: 
 javascript - input form 
 Responsive per cellulare
+collegamento backend
