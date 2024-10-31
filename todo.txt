@@ -1,3 +1,2 @@
 Update javascript
-Update responsive
-Update sizes
+Update responsive small size
